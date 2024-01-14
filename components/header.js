@@ -8,7 +8,7 @@ const Header = (props) => {
         address = props.address
     }
     return(
-        <Menu>
+        <Menu style={{marginTop: 30}}>
             <MenuItem >Home</MenuItem>
             <MenuItem >Top</MenuItem>
             <MenuItem position='right' >New Article</MenuItem>

@@ -8,11 +8,15 @@
   "dependencies": {
     "@pinata/sdk": "^2.1.0",
     "api": "^6.1.1",
+    "axios": "^1.6.5",
     "dotenv": "^16.3.1",
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^2.1.5"
+    "semantic-ui-react": "^2.1.5",
+    "web3": "^4.3.0"
   }
 }
