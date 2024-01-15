@@ -14,7 +14,6 @@ const api = axios.create({
 });
 
 var response = await api.post(apiUrl, {pinataContent: json})
-  console.log(response)
   return response
 }
 

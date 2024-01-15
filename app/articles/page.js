@@ -1,7 +1,7 @@
-import contract from '../../ethereum/erc721';
+import contract from '../../ethereum/article';
 import getData from '../../pinata/getData'
 async function getArticles() {
-    var numberOfTokens = 5//await contract.methods.totalSupply().call() https://portal.thirdweb.com/contracts/build/extensions/erc-721/ERC721Supply https://stackoverflow.com/questions/68810515/totalsupply-is-not-a-function-openzeppelin-contracts
+    var numberOfTokens = await contract.methods.totalSupply().call() //https://portal.thirdweb.com/contracts/build/extensions/erc-721/ERC721Supply r
     var data = []
     for(var i=0;i<numberOfTokens;i++){
       var tokenURI = await contract.methods.tokenURI(Number(i)).call();
