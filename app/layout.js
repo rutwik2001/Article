@@ -11,9 +11,9 @@ const Layout = (props) => {
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/semantic-ui@2/dist/semantic.min.css"
   />
-  
+  <Header address={null}/>
       <Container>
-      <Header address={null}/>
+      
         {props.children}
         
         </Container></body>

@@ -18,7 +18,13 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "contractAddress",
+				"type": "address"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
@@ -181,6 +187,31 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "writer",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "tokenURI",
+				"type": "string"
+			}
+		],
+		"name": "ArticleMinted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
 				"name": "_fromTokenId",
 				"type": "uint256"
 			},
@@ -193,6 +224,13 @@
 		],
 		"name": "BatchMetadataUpdate",
 		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "createVoter",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -209,11 +247,6 @@
 	},
 	{
 		"inputs": [
-			{
-				"internalType": "address",
-				"name": "writer",
-				"type": "address"
-			},
 			{
 				"internalType": "string",
 				"name": "tokenURI",
@@ -351,6 +384,48 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "_articleId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_yourVote",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "commentURI",
+				"type": "string"
+			}
+		],
+		"name": "vote",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "articleId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "voter",
+				"type": "address"
+			}
+		],
+		"name": "VoteCasted",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "owner",
 				"type": "address"
@@ -379,6 +454,19 @@
 		"outputs": [
 			{
 				"internalType": "contract Comment",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "DAOTokenIntance",
+		"outputs": [
+			{
+				"internalType": "contract DAOTokenv2",
 				"name": "",
 				"type": "address"
 			}
@@ -427,6 +515,49 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "_articleId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_voter",
+				"type": "address"
+			}
+		],
+		"name": "getYourVote",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "isApproved",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "owner",
 				"type": "address"
@@ -449,6 +580,49 @@
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isVoted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "isVoter",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "name",
 		"outputs": [
@@ -456,6 +630,19 @@
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "noOfVoters",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -539,6 +726,49 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "votingCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "yourVote",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
